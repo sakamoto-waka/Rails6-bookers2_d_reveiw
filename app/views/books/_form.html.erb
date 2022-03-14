@@ -17,6 +17,9 @@
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
             scoreName: 'book[rate]',
+            if (book.rate != null) {
+              readOnly: true;
+            }
         });
     </script>
   <div class="form-group">
