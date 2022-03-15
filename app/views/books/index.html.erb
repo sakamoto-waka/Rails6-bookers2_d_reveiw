@@ -10,6 +10,8 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= link_to '新しい順', books_path(sort_updated: true), remote: true %>
+      <span> ｜ </span>
+      <%= link_to '評価の高い順', books_path(high_rated: true), remote: true %>
       <div id="books_sort">
         <%= render 'index', books: @books %>
       </div>

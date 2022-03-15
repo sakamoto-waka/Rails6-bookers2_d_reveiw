@@ -10,6 +10,8 @@ class BooksController < ApplicationController
   def index
     if params[:sort_updated]
       @books = Book.latest
+    elsif params[:high_rated]
+      @books = Book.rated
     else
       @books = Book.all
     end
