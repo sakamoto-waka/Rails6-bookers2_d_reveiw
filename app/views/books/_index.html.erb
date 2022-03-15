@@ -1,6 +1,6 @@
-<%= link_to '新しい順', books_path(sort_updated: true) %>
+<%= link_to '新しい順', books_path(sort_updated: true), remote: true %>
 
-<table class='table table-hover table-inverse'>
+<table class='table table-hover table-inverse' id="books_sort">
   <thead>
     <tr>
       <th></th>
