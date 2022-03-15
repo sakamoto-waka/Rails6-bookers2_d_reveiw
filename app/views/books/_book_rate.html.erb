@@ -1,6 +1,6 @@
 <div id="star-rate_<%= book.id %>" class="form-group"></div>
 <script>
-  $(document).on('turbolinks:load', function() {
+  $(document).bind('turbolinks:load ajax:complete', function() {
   $('#star-rate_<%= book.id %>').empty();
   $('#star-rate_<%= book.id %>').raty({
     size      : 20,
