@@ -7,10 +7,15 @@
     <%= f.label :opinion %>
     <%= f.text_area :body, class: 'form-control book_body' %>
   </div>
-   <div class="form-group">
-    <%= f.label :category %>
-    <%= f.text_field :category, class: 'form-control book_body' %>
+  <!-- <div class="form-group">-->
+  <!--  <#%= f.label :category %>-->
+  <!--  <#%= f.text_field :category, class: 'form-control book_body' %>-->
+  <!--</div>-->
+  <div class="form-group">
+    <%= f.label :name, 'Category' %>
+    <%= f.text_field :name, value: @tag_list, class: 'form-control book_body' %>
   </div>
+  
   <% if book.id == nil %>
     <div class="field" id="star">
       <%= f.label :rate %>
