@@ -20,7 +20,11 @@
         <% if book.category == nil %>
           <td></td>
         <% else %>
-          <td><%= link_to book.category, search_book_path(keyword: book.category), remote: true %></td>
+          <% if request.path.include?("users")%>
+            <td><%= book.category %></td>
+          <% else %>
+            <td><%= link_to book.category, search_book_path(keyword: book.category), remote: true %></td>
+          <% end %>
         <% end %>
         <td class="favorite_btn_<%= book.id %>">
           <%= render 'favorites/favorite_btn', book: book %>
