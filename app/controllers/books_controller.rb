@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     else
       @books = Book.all
     end
-    @book = Book.new
+      @book = Book.new
   end
 
   def create
@@ -51,7 +51,6 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
   def search_book
-    @book = Book.find(params[:book_id])
     @books = Book.search_book(params[:keyword])
   end
 
