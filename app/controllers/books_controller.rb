@@ -16,6 +16,7 @@ class BooksController < ApplicationController
       @books = Book.all
     end
       @book = Book.new
+      @tag_list = Tag.all
   end
 
   def create
