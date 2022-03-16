@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     else
       @books = Book.all
     end
-    @book = Book.new
+      @book = Book.new
   end
 
   def create
@@ -50,10 +50,13 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
+  def search_book
+    @books = Book.search_book(params[:keyword])
+  end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :rate)
+    params.require(:book).permit(:title, :body, :rate, :category)
   end
 end
