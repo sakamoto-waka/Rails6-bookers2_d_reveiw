@@ -35,7 +35,9 @@
           <% if request.path.include?("users")%>
             <td><%= book.tags.map(&:name).join(', ') %></td>
           <% else %>
-            <td><%= book.tags.map(&:name).join(', ') %></td>
+            <% book.tags.each do |tag| %>
+              <td><%= link_to tag.name, search_book_path(tag_id: tag.id) %></td>
+            <% end %>
           <% end %>
         <% end %>
         <td class="favorite_btn_<%= book.id %>">

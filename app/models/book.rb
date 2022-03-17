@@ -28,10 +28,12 @@ class Book < ApplicationRecord
     end
   end
 
+  # def self.search_book(search_word)
+  #   Book.where('category LIKE ?', "#{search_word}")
+  # end
   def self.search_book(search_word)
-    Book.where('category LIKE ?', "#{search_word}")
-  end
-
+    Tag.where('name LIKE ?', "#{search_word}")
+  end  
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
